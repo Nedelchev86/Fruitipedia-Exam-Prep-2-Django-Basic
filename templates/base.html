@@ -20,18 +20,19 @@
 
             <!-- If there is a user profile -->
             {% if have_profile %}
-            <div class="user">
                 
-                <a href="{% url 'dashboard' %}">Dashboard</a>
-                <a href="{% url 'create_fruit'  %}">Add Fruit</a>
-                <a href="{% url 'create_profile' %}">Profile</a>
-            </div>
-        {% else %}
-            <!-- If user profile has NOT been created -->
-            <div class="guest">
+                            <div class="guest">
 
                 <a href="{% url 'create_profile' %}">Create Profile</a>
 
+            </div>
+        {% else %}
+            <!-- If user profile has NOT been created -->
+            <div class="user">
+
+                <a href="{% url 'dashboard' %}">Dashboard</a>
+                <a href="{% url 'create_fruit'  %}">Add Fruit</a>
+                <a href="{% url 'details_profile' %}">Profile</a>
             </div>
        {% endif %}
         </nav>
@@ -48,4 +49,3 @@
 </footer>
 </body>
 </html>
-        

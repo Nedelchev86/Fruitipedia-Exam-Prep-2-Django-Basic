@@ -39,3 +39,26 @@ class DeleteFruitForm(forms.ModelForm):
     #     super().__init__(*args, **kwargs)
     #     for field in self.fields.values():
     #         field.widget.attrs['disabled'] = True
+
+
+class CreateFruitForm(forms.ModelForm):
+    class Meta:
+        model = Fruit
+        exclude = ('owner',)
+
+        labels = {
+            'name': '',
+            'image_url': '',
+            'description': '',
+            'nutrition': '',
+
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['name'].widget.attrs['placeholder'] = 'Fruit Name'
+        self.fields['image_url'].widget.attrs['placeholder'] = 'Fruit Image URL'
+        self.fields['description'].widget.attrs['placeholder'] = 'Fruit Description'
+        self.fields['nutrition'].widget.attrs['placeholder'] = 'Nutrition Info'
+
