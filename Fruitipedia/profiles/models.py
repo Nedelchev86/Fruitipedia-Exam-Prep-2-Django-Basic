@@ -1,7 +1,7 @@
 from django.core.validators import MinLengthValidator
 from django.db import models
 
-from fruitipedia.profiles.validators import validate_firs_letter
+from Fruitipedia.profiles.validators import validate_firs_letter
 
 
 # Create your models here.

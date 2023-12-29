@@ -19,8 +19,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include("fruitipedia.common.urls")),
-    path('profile/', include('fruitipedia.profiles.urls')),
-    path('fruits/', include('fruitipedia.fruits.urls')),
+    path('', include("Fruitipedia.common.urls")),
+    path('profile/', include('Fruitipedia.profiles.urls')),
+    path('fruit/', include('Fruitipedia.fruits.urls')),
 
 ]

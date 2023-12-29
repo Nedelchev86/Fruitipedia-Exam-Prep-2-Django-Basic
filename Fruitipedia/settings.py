@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'Fruitipedia.profiles',
+    'Fruitipedia.fruits',
+    'Fruitipedia.common'
 ]
 
 MIDDLEWARE = [
