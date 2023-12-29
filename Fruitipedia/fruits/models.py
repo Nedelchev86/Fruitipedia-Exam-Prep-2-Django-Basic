@@ -10,9 +10,8 @@ class Fruit(models.Model):
     name = models.CharField(
         max_length=30,
         unique=True,
-        validators=[MinLengthValidator(2), only_letter_validator]
-    )
-    image_url = models.URLField(),
+        validators=[MinLengthValidator(2), only_letter_validator])
+    image_url = models.URLField(blank=False, null=False)
     description = models.TextField()
     nutrition = models.TextField(null=True, blank=True)
-    owner = models.ForeignKey(to=Profile, on_delete=models.SET_NULL, blank=True, null=True)
+    owner = models.ForeignKey(to=Profile, on_delete=models.CASCADE, blank=True, null=True)
