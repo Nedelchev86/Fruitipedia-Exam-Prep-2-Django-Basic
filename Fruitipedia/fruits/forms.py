@@ -33,12 +33,13 @@ class DeleteFruitForm(forms.ModelForm):
     class Meta:
         model = Fruit
         fields = "__all__"
-        # exclude = ('owner',)
+        exclude = ('owner',)
 
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(*args, **kwargs)
-    #     for field in self.fields.values():
-    #         field.widget.attrs['disabled'] = True
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs['disabled'] = 'disabled'
+            field.widget.attrs['readonly'] = 'readonly'
 
 
 class CreateFruitForm(forms.ModelForm):
