@@ -59,4 +59,9 @@ class DeleteProfileView(DeleteView):
         obj = Profile.objects.first()
         return obj
 
+    def post(self, request, *args, **kwargs):
+        post = super().post(request, *args, **kwargs)
+        Fruit.objects.all().delete()
+        return post
+
 
